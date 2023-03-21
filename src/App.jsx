@@ -5,6 +5,10 @@ import Products from "./page/products/Products"
 import Product from "./page/product/Product"
 import Navbar from './components/navbar/Navbar'
 import Footer from './components/footer/Footer'
+
+import "./app.scss"
+
+
 const App = () => {
 
 
