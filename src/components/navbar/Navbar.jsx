@@ -65,7 +65,7 @@ const Navbar = () => {
 
             <div className="cartIcon">
               <span class="material-symbols-outlined">shopping_cart</span>
-              <span>0</span>
+              <span>5</span>
             </div>
           </div>
         </div>
