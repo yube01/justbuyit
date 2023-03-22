@@ -1,10 +1,10 @@
 import React from 'react'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-
+import "./slider.scss"
 const Slider = () => {
 
-    const slider=[
+    const sliders=[
         {
             img:"https://images.pexels.com/photos/1549200/pexels-photo-1549200.jpeg?auto=compress&cs=tinysrgb&w=1600",
             title:""
@@ -29,7 +29,7 @@ const Slider = () => {
         showStatus={false}
         >
 
-{slider.map(sliderImg=>(
+{sliders.map(sliderImg=>(
                 
                   <img src={sliderImg.img} alt="" />
                   
