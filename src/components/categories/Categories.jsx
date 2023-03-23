@@ -74,7 +74,7 @@ const Categories = () => {
         </div>
         <div className="row">
           <img
-            src="https://images.pexels.com/photos/1159670/pexels-photo-1159670.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            src="https://imgs.search.brave.com/AoBYKCBdT_F0VM9nm19F78M8GA4kTuZhyFP_w73aCwA/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9tZWRp/YS5jZ3RyYWRlci5j/b20vdmFyaWFudHMv/S2tLYjRHd2F3OTNv/VmpnOFFXTmNlZDNr/LzQwMDczZjg2ZGVh/NWNjMjdiM2U0NmI5/MTEyODRmMTBmZjM1/ODMzZGE3NDA0NmRh/NTVmNTVmMjI5Yzg5/OTNkZTcvMTMuanBn"
             alt=""
           />
           <button>
