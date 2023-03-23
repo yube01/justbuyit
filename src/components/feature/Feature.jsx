@@ -17,7 +17,7 @@ const Feature = ({type}) => {
             img1:"https://images.unsplash.com/photo-1581044777550-4cfa60707c03?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=386&q=80",
             img2:"https://images.unsplash.com/photo-1485968579580-b6d095142e6e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=386&q=80",
             title:"green",
-            isNew:true,
+            isNew:false,
             oldPrice:14,
             price:30
         },
@@ -26,7 +26,7 @@ const Feature = ({type}) => {
             img1:"https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=495&q=80",
             img2:"https://images.unsplash.com/photo-1493704099487-36e3c0412f6e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1154&q=80",
             title:"yellow",
-            isNew:true,
+            isNew:false,
             oldPrice:14,
             price:30
         },
@@ -35,7 +35,7 @@ const Feature = ({type}) => {
             img1:"https://images.unsplash.com/photo-1601762603339-fd61e28b698a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
             img2:"https://images.unsplash.com/photo-1654806389957-f8ca19bb7b1a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
             title:"white",
-            isNew:true,
+            isNew:false,
             oldPrice:14,
             price:30
         }
