@@ -2,6 +2,7 @@ import React from 'react'
 import Slider from "../../components/slider/Slider"
 import Feature from '../../components/feature/Feature'
 import Categories from '../../components/categories/Categories'
+import Contact from '../../components/contact/Contact'
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
       <Feature type="Feature"/>
       <Categories/>
       <Feature type="Trending"/>
+      <Contact/>
     </div>
   )
 }
