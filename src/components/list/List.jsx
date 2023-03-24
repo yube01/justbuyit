@@ -1,5 +1,6 @@
 import React from 'react'
 import "./list.scss"
+import Card from '../card/Card'
 const List = () => {
 
     const data = [
