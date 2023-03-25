@@ -10,7 +10,7 @@ const List = () => {
             img2:"https://images.unsplash.com/photo-1539109136881-3be0616acf4b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
             title:"blue",
             isNew:true,
-            oldPrice:14,
+            oldPrice:15,
             price:30
         },
         {
@@ -19,8 +19,8 @@ const List = () => {
             img2:"https://images.unsplash.com/photo-1485968579580-b6d095142e6e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=386&q=80",
             title:"green",
             isNew:false,
-            oldPrice:14,
-            price:30
+            oldPrice:144,
+            price:303
         },
         {
             id:1,
@@ -28,8 +28,8 @@ const List = () => {
             img2:"https://images.unsplash.com/photo-1493704099487-36e3c0412f6e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1154&q=80",
             title:"yellow",
             isNew:false,
-            oldPrice:14,
-            price:30
+            oldPrice:124,
+            price:301
         },
         {
             id:1,
@@ -37,8 +37,8 @@ const List = () => {
             img2:"https://images.unsplash.com/photo-1654806389957-f8ca19bb7b1a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
             title:"white",
             isNew:false,
-            oldPrice:14,
-            price:30
+            oldPrice:104,
+            price:390
         }
 
 

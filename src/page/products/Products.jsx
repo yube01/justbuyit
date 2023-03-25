@@ -9,6 +9,7 @@ const Products = () => {
   const catId = parseInt(useParams().id)
 
   const [maxPrice, setMaxPrice] = useState(1000)
+  const[sort, setSort] = useState(null)
 
   return (
     <div className="products">
@@ -32,11 +33,11 @@ const Products = () => {
         <div className="filterItem">
           <h2>Sort by</h2>
           <div className="inputItem">
-            <input type="radio" id="asc" value="asc" name="price" />
+            <input type="radio" id="asc" value="asc" name="price" onChange={(e)=>setSort("asc")}/>
             <label htmlFor="asc">Price (Lowest first)</label>
           </div>
           <div className="inputItem">
-            <input type="radio" id="desc" value="desc" name="price" />
+            <input type="radio" id="desc" value="desc" name="price" onChange={(e)=>setSort("desc")}/>
             <label htmlFor="desc">Price (Highest first)</label>
           </div>
         </div>
@@ -48,9 +49,9 @@ const Products = () => {
           alt=""
         />
         <List
-          // catId={catId}
-          // maxPrice={maxPrice}
-          // sort={sort}
+          catId={catId}
+          maxPrice={maxPrice}
+          sort={sort}
           // subCats={selectedSubCats}
         />
       </div>
