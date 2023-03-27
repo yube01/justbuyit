@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import "./navbar.scss";
 import { Link } from "react-router-dom";
 import En from "../../img/en.png";
+import Cart from "../cart/Cart";
 
 const Navbar = () => {
+
+
+
+  const [ openCart, setOpenCart] = useState(false)
+
   return (
     <div className="navbar">
       <div className="wrapper">
@@ -63,13 +69,14 @@ const Navbar = () => {
             <span class="material-symbols-outlined">person</span>
             <span class="material-symbols-outlined">favorite</span>
 
-            <div className="cartIcon">
+            <div className="cartIcon" onClick={()=>setOpenCart(!openCart)}>
               <span class="material-symbols-outlined">shopping_cart</span>
               <span>5</span>
             </div>
           </div>
         </div>
       </div>
+      {openCart && <Cart/>}
     </div>
   );
 };

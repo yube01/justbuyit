@@ -20,7 +20,6 @@ const Product = () => {
         </div>
       </div>
       <div className="right">
-        
         <h1>Title</h1>
         <span className="price">$13</span>
         <p>
@@ -53,37 +52,31 @@ const Product = () => {
           //   )
           // }
         >
-          
           <span class="material-symbols-outlined">shopping_cart</span>ADD TO
           CART
         </button>
         <div className="links">
-              <div className="item">
-              <span class="material-symbols-outlined">
-favorite
-</span> ADD TO WISH LIST
-              </div>
-              <div className="item">
-              <span class="material-symbols-outlined">
-balance
-</span>ADD TO COMPARE
-              </div>
-            </div>
-            <div className="info">
-              <span>Vendor: Polo</span>
-              <span>Product Type: T-Shirt</span>
-              <span>Tag: T-Shirt, Women, Top</span>
-            </div>
-            <hr />
-            <div className="info">
-              <span>DESCRIPTION</span>
-              <hr />
-              <span>ADDITIONAL INFORMATION</span>
-              <hr />
-              <span>FAQ</span>
-            </div>
-          
-        
+          <div className="item">
+            <span class="material-symbols-outlined">favorite</span> ADD TO WISH
+            LIST
+          </div>
+          <div className="item">
+            <span class="material-symbols-outlined">balance</span>ADD TO COMPARE
+          </div>
+        </div>
+        <div className="info">
+          <span>Vendor: Polo</span>
+          <span>Product Type: T-Shirt</span>
+          <span>Tag: T-Shirt, Women, Top</span>
+        </div>
+        <hr />
+        <div className="info">
+          <span>DESCRIPTION</span>
+          <hr />
+          <span>ADDITIONAL INFORMATION</span>
+          <hr />
+          <span>FAQ</span>
+        </div>
       </div>
     </div>
   );
