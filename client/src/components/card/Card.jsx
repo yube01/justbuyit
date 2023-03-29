@@ -7,8 +7,8 @@ const Card = ({ item }) => {
       <div className="card">
         <div className="image">
           {item?.attributes.isNew && <span>New Season</span> }
-          <img src={"http://localhost:1337"+item?.attributes.img1?.data?.attributes?.url} alt="" className="mainImg" />
-          <img src={"http://localhost:1337"+item?.attributes.img2?.data?.attributes?.url} alt="" className="secondImg" />
+          <img src={ process.env.IMAGE_URL +item?.attributes.img1?.data?.attributes?.url} alt="" className="mainImg" />
+          <img src={ process.env.IMAGE_URL +item?.attributes.img2?.data?.attributes?.url} alt="" className="secondImg" />
         </div>
         <h2>{item?.attributes.title}</h2>
         <div className="prices">

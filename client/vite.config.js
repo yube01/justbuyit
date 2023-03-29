@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [
     react(),
     EnvironmentPlugin(
-      ["BACKEND_TOKEN","STRAPI_TOKEN"]
+      ["BACKEND_TOKEN","STRAPI_TOKEN","IMAGE_URL"]
     )
   ],
 })
