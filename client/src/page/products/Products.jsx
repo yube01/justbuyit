@@ -13,8 +13,18 @@ const Products = () => {
   const[sort, setSort] = useState(null)
 
 
+  const [ selectedSubCat, setSelectedSubCats] = useState([])
   const {data, loading, error} = useFetch(`/sub-categories?[filters][categories][id][$eq]=${catId}`)
-  console.log(data)
+  const handleChange = (e)=>{
+    const value = e.target.value;
+    const isChecked = e.target.checked
+
+    setSelectedSubCats(
+      isChecked?[...selectedSubCat,value]:
+      selectedSubCat.filter((item)=>item !==value)
+    )
+   }
+   console.log(selectedSubCat)
 
   return (
     <div className="products">
@@ -26,7 +36,7 @@ const Products = () => {
         data?.map((item)=>(
           
         <div className="inputItem" key={item.id} >
-        <input type="checkbox" id={item.id} value={item.id} />
+        <input type="checkbox" id={item.id} value={item.id} onChange={handleChange} />
         <label htmlFor={item.id}>{item.attributes.title}</label>
       </div>
 
@@ -63,7 +73,7 @@ const Products = () => {
           catId={catId}
           maxPrice={maxPrice}
           sort={sort}
-          // subCats={selectedSubCats}
+          subCats={selectedSubCat}
         />
       </div>
     </div>
