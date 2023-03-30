@@ -1,31 +1,15 @@
-import React, { useEffect, useState } from 'react'
 import "./feature.scss"
 import Card from '../card/Card'
-import axios from "axios"
+
+import useFetch from '../../hooks/useFetch'
 const Feature = ({type}) => {
    
 
-    const [ data, setData] = useState([])
 
-    useEffect(()=>{
-      const fetchData = async ()=>{
-        try {
-          const res = await axios.get( process.env.BACKEND_TOKEN +`/products?populate=*&[filters][type][$eq]=${type}`,{
-            headers:{
-              Authorization: "bearer" + process.env.STRAPI_TOKEN
-            }
-            
-          })
-            setData(res.data.data)
-          
-        } catch (error) {
-          console.log(error)
-        }
-      }
-      fetchData()
-    },[])
+  const {data,loading,error} = useFetch(`/products?populate=*&[filters][type][$eq]=${type}`)
 
-    console.log(data)
+
+   
 
 
   return (
@@ -42,6 +26,8 @@ const Feature = ({type}) => {
       </div>
       <div className="bottom">
         {
+          error?"something went wrong":
+          loading?"loading":
            data.map((item) =>
             <Card item={item} key={item.id} />)}
       </div>

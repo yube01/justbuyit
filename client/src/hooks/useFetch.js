@@ -1,28 +1,28 @@
-import axios from "axios"
-import { useState } from "react"
 
-const useFetch = async(url)=>{
-    const [ data, setData] = useState(null)
+import { useEffect, useState } from "react"
+import { makeRequest } from "../makeRequest"
+
+const useFetch = (url)=>{
+    const [ data, setData] = useState([])
     const [error , setError] = useState(false)
     const [loading, setLoading] = useState(false)
 
     useEffect(()=>{
       const fetchData = async ()=>{
         try {
-          const res = await axios.get( process.env.BACKEND_TOKEN +`/products?populate=*&[filters][type][$eq]=${type}`,{
-            headers:{
-              Authorization: "bearer" + process.env.STRAPI_TOKEN
-            }
-            
-          })
+            setLoading(true)
+          const res = await makeRequest.get( url)
             setData(res.data.data)
           
         } catch (error) {
-          console.log(error)
+          setError(true)
         }
+        setLoading(false)
       }
       fetchData()
-    },[])
+    },[url])
 
-    console.log(data)
+    return{data,error,loading}
 }
+
+export default useFetch
