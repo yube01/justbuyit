@@ -3,12 +3,12 @@ import "./list.scss"
 import Card from '../card/Card'
 import useFetch from '../../hooks/useFetch'
 
-const List = ({catId, maxPrice,subCats}) => {
+const List = ({catId, maxPrice,sort,subCats}) => {
 
 
     const {data, loading} = useFetch(`/products?populate=*&[filters][categories][id]=${catId}${subCats.map(
       (item)=>`&[filters][sub_categories][id][$eq]=${item}`
-    )}&[filters][price][$lte]=${maxPrice}
+    )}&[filters][price][$lte]=${maxPrice}&sort=price:${sort}
     `)
     
 
@@ -22,4 +22,4 @@ const List = ({catId, maxPrice,subCats}) => {
 
 export default List
 //for sorting
-// &sort=price:${sort}
+// 
