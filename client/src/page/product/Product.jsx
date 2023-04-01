@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./product.scss";
 import { useParams } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 const Product = () => {
   const [selectedImg, setSelectedImg] = useState("img1");
-  const [quantity, setQuantity] = useState(5);
+  const [quantity, setQuantity] = useState(1);
 
 
   const id = useParams().id;
+
+
+  
 
   const { data, loading, error } = useFetch(`/products/${id}?populate=*`);
   console.log(data)
@@ -21,18 +24,13 @@ const Product = () => {
         
         </div>
         <div className="mainImg">
-          <img src={process.env.IMAGE_URL + data?.attributes[selectedImg]?.data?.attributes?.url} alt="" />
+          <img src={process.env.IMAGE_URL + data?.attributes?.[selectedImg]?.data?.attributes?.url} alt="" />
         </div>
       </div>
       <div className="right">
-        <h1>Title</h1>
-        <span className="price">$13</span>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
-          assumenda minima eum harum distinctio obcaecati fuga cupiditate velit
-          sapiente temporibus quo quia eius ratione corporis dolorem mollitia
-          ea, incidunt sequi?
-        </p>
+        <h1>{data?.attributes?.title}</h1>
+        <span className="price">{data?.attributes?.price}</span>
+        <p>{data?.attributes?.desc}</p>
         <div className="quantity">
           <button
             onClick={() => setQuantity((prev) => (prev === 1 ? 1 : prev - 1))}
