@@ -3,9 +3,11 @@ import "./navbar.scss";
 import { Link } from "react-router-dom";
 import En from "../../img/en.png";
 import Cart from "../cart/Cart";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
 
+  const products = useSelector(state=>state.cart.products)
 
 
   const [ openCart, setOpenCart] = useState(false)
@@ -71,7 +73,7 @@ const Navbar = () => {
 
             <div className="cartIcon" onClick={()=>setOpenCart(!openCart)}>
               <span class="material-symbols-outlined">shopping_cart</span>
-              <span>5</span>
+              <span>{products.length}</span>
             </div>
           </div>
         </div>

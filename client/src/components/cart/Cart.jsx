@@ -1,11 +1,13 @@
 import React from "react";
 import "./cart.scss";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { removeCart, resetCart } from "../../redux/cartReducer";
 const Cart = () => {
  
 
   const products = useSelector(state=>state.cart.products)
 
+  const dispatch = useDispatch()
   
   const totalPrice = () => {
     let total = 0;
@@ -27,7 +29,7 @@ const Cart = () => {
             <div className="price">{item.quantity} x ${item.price}</div>
           </div>
 
-          <div className="delete">
+          <div className="delete" onClick={()=>dispatch(removeCart(item.id))} >
             <span class="material-symbols-outlined">delete</span>
           </div>
         </div>
@@ -37,7 +39,7 @@ const Cart = () => {
         <span>${totalPrice()}</span>
       </div>
       <button>PROCEED TO CHECKOUT</button>
-      <span className="reset">Reset Cart</span>
+      <span className="reset" onClick={()=>{dispatch(resetCart())}} >Reset Cart</span>
     </div>
   );
 };
