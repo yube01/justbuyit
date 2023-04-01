@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./product.scss";
 import { useParams } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/cartReducer";
 const Product = () => {
   const [selectedImg, setSelectedImg] = useState("img1");
   const [quantity, setQuantity] = useState(1);
@@ -10,7 +12,7 @@ const Product = () => {
   const id = useParams().id;
 
 
-  
+  const dispatch = useDispatch()
 
   const { data, loading, error } = useFetch(`/products/${id}?populate=*`);
   console.log(data)
@@ -42,18 +44,18 @@ const Product = () => {
         </div>
         <button
           className="add"
-          // onClick={() =>
-          //   dispatch(
-          //     addToCart({
-          //       id: data.id,
-          //       title: data.attributes.title,
-          //       desc: data.attributes.desc,
-          //       price: data.attributes.price,
-          //       img: data.attributes.img.data.attributes.url,
-          //       quantity,
-          //     })
-          //   )
-          // }
+          onClick={() =>
+            dispatch(
+              addToCart({
+                id: data.id,
+                title: data.attributes.title,
+                desc: data.attributes.desc,
+                price: data.attributes.price,
+                img1: data.attributes.img1.data.attributes.url,
+                quantity,
+              })
+            )
+          }
         >
           <span class="material-symbols-outlined">shopping_cart</span>ADD TO
           CART
