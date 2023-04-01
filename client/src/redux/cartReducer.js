@@ -17,11 +17,11 @@ export const cartSlice = createSlice({
         state.push(action.payload)
       }
     },
-    decrement: (state) => {
-      state.value -= 1
+    removeCart: (state,action) => {
+      state.products = state.products.filter(item=>item.id !== action.payload)
     },
-    incrementByAmount: (state, action) => {
-      state.value += action.payload
+    resetCart: (state) => {
+      state.products = []
     },
   },
 })
