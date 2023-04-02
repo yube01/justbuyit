@@ -2,6 +2,8 @@ import React from "react";
 import "./cart.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { removeCart, resetCart } from "../../redux/cartReducer";
+import {loadStripe} from '@stripe/stripe-js';
+import makeRequest from "../../makeRequest"
 const Cart = () => {
  
 
@@ -16,6 +18,19 @@ const Cart = () => {
     });
     return total.toFixed(2);
   };
+  const stripePromise = loadStripe('pk_test_51MrtvDBOZvwTq2e4FF0HLucLuVuXbPrXcBfqpKDmFDqLZFQQLeCgv5HR4JSzPqTXrmITSEGkRftHEwCK8jOfQ7H600eV4I5ION');
+
+  const handlePayment = async()=>{
+    try {
+
+      const stripe = await stripePromise
+      const res = await makeRequest.post("")
+      
+    } catch (error) {
+      console.log(error)
+      
+    }
+  }
    
   return (
     <div className="cart">
@@ -38,7 +53,7 @@ const Cart = () => {
         <span>SUBTOTAL</span>
         <span>${totalPrice()}</span>
       </div>
-      <button>PROCEED TO CHECKOUT</button>
+      <button onClick={handlePayment} >PROCEED TO CHECKOUT</button>
       <span className="reset" onClick={()=>{dispatch(resetCart())}} >Reset Cart</span>
     </div>
   );
