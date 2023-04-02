@@ -3,7 +3,7 @@ import "./cart.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { removeCart, resetCart } from "../../redux/cartReducer";
 import {loadStripe} from '@stripe/stripe-js';
-import makeRequest from "../../makeRequest"
+import {makeRequest} from "../../makeRequest"
 const Cart = () => {
  
 
@@ -24,8 +24,12 @@ const Cart = () => {
     try {
 
       const stripe = await stripePromise
-      const res = await makeRequest.post("")
-      
+      const res = await makeRequest.post("/orders",{
+        products
+      })
+      await stripe.redirectToCheckout({
+        sessionId:res.data.stripeSession.id,
+      })
     } catch (error) {
       console.log(error)
       
